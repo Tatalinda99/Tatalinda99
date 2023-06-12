@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: pink;
+            cursor: none;
+        }
+        
+        #question {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 200px;
+        }
+        
+        #options {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .option {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="question">Você é a irmã da Thalita, Dri?</div>
+    <div id="options">
+        <div class="option" onclick="displayMessage(true)">Sim</div>
+        <div class="option" onclick="moveButton()">Não</div>
+    </div>
+
+    <script>
+        function displayMessage(isYes) {
+            if (isYes) {
+                // Exibir a mensagem quando a opção "sim" for selecionada
+                var message = document.createElement("div");
+                message.innerHTML = "TE AMO MUITO sister ❤️";
+                message.style.fontSize = "24px";
+                message.style.textAlign = "center";
+                message.style.marginTop = "100px";
+                document.body.appendChild(message);
+            }
+        }
+
+        function moveButton() {
+            var button = document.getElementsByClassName('option')[1];
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+            var randomX = Math.random() * (screenWidth - 200);
+            var randomY = Math.random() * (screenHeight - 100);
+            button.style.position = 'absolute';
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
